@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Conference Smart Contract</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Conference Booking System</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <span id="contract_address"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <span id="organizer_address"></span>
+        </div>
+      </div>
+
+      <div style="height:10px"></div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <span id="num_registrant"></span>
+        </div>
+      </div>
+
+
+      <div style="height:10px"></div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing">Quota</span>
+            </div>
+            <input id="quota" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
+            <div class="input-group-append">
+              <button id="change_quota" class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing">Active Account</span>
+            </div>
+            <select id="active_account" class="custom-select"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing">Ticket Price</span>
+            </div>
+            <input id="price" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
+            <div class="input-group-append">
+              <span class="input-group-text" id="inputGroup-sizing">ETH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" id="buy_ticket">Buy Ticket</span>
+        </div>
+      </div>
+
+      <div style="height:10px"></div>
+
+      <div class="row">
+        <div class="col-12">
+          <button type="button" class="btn btn-warning" id="refund_ticket">Refund Ticket</span>
+        </div>
+      </div>
+      
+    </div>
+
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
