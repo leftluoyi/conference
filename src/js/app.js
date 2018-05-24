@@ -22,7 +22,8 @@ $(document).ready(() => {
     Conference = TruffleContract(ConferenceArtifact);
     Conference.setProvider(web3Provider)
 
-    const conference = await Conference.new({from: accounts[0], gas: 1000000});
+    // const conference = await Conference.new({from: accounts[0], gas: 1000000});
+    const conference = await Conference.at('0xfc342a5398592f8c6b97095c4aa606e0543fe427');
     $('#contract_address').html("Contract is deployed at: " + conference.address)
     conference.organizer.call().then(organizer => {
       $('#organizer_address').html("Organizer address is: " + organizer)
@@ -31,7 +32,8 @@ $(document).ready(() => {
       $('#quota').val(data)
     })
 
-    updateNumRegistrant(conference)    
+    updateNumRegistrant(conference);
+    updateContractBalance(conference);
     
     $('#change_quota').click(() => {
       conference.changeQuota($('#quota').val(), {from: accounts[0]})
@@ -40,11 +42,15 @@ $(document).ready(() => {
     $('#buy_ticket').click(() => {
       ticketPrice = web3.toWei(checkTicketPrice(), 'ether');
       conference.buyTicket({from: getActiveAccount(), value: ticketPrice})
+      updateNumRegistrant(conference)
+      updateContractBalance(conference)
     })
 
     $('#refund_ticket').click(() => {
       ticketPrice = web3.toWei(checkTicketPrice(), 'ether');
       conference.refundTicket(getActiveAccount(), ticketPrice, {from: accounts[0]})
+      updateNumRegistrant(conference)
+      updateContractBalance(conference)
     })
 
 
@@ -69,6 +75,11 @@ $(document).ready(() => {
 
   const getActiveAccount = () => {
     return $('#active_account').val();
+  }
+
+  const updateContractBalance = (conference) => {
+    const balance = web3.eth.getBalance(conference.address).toNumber()
+    $('#balance').html("Total balance: " + balance);
   }
 
   
