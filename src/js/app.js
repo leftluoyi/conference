@@ -19,11 +19,11 @@ $(document).ready(() => {
 
   $.getJSON('Conference.json', async (data) => {
     const ConferenceArtifact = data;
-    Conference = TruffleContract(ConferenceArtifact);
+    const Conference = TruffleContract(ConferenceArtifact);
     Conference.setProvider(web3Provider)
 
     // const conference = await Conference.new({from: accounts[0], gas: 1000000});
-    const conference = await Conference.at('0xfc342a5398592f8c6b97095c4aa606e0543fe427');
+    const conference = await Conference.at('0x563d46ce0e76fe1b326d01b72a250f870ca136e6');
     $('#contract_address').html("Contract is deployed at: " + conference.address)
     conference.organizer.call().then(organizer => {
       $('#organizer_address').html("Organizer address is: " + organizer)
@@ -51,6 +51,10 @@ $(document).ready(() => {
       conference.refundTicket(getActiveAccount(), ticketPrice, {from: accounts[0]})
       updateNumRegistrant(conference)
       updateContractBalance(conference)
+    })
+
+    $('#end_registration').click(() => {
+      conference.destroy({from: accounts[0]})
     })
 
 

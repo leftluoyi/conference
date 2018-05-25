@@ -11,42 +11,49 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <h1 class="text-center">Conference Booking System</h1>
           <hr/>
           <br/>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h2>Organizer</h2>
+        </div>
+      </div>
+      <div style="height:10px"></div>
+
+      <div class="row justify-content-center">
+        <div class="col-8">
           <span id="contract_address"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <span id="organizer_address"></span>
         </div>
       </div>
 
       <div style="height:10px"></div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <span id="num_registrant"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <span id="balance">Balance</span>
         </div>
       </div>
 
       <div style="height:10px"></div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing">Quota</span>
@@ -59,43 +66,57 @@
         </div>
       </div>
 
-      <hr>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <button type="button" class="btn btn-danger" id="end_registration">End Registration</span>
+        </div>
+      </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div style="height:100px"></div>
+      <hr>
+      <div style="height:20px"></div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h2>Registrant</h2>
+        </div>
+      </div>
+      <div style="height:10px"></div>
+
+      <div class="row justify-content-center">
+        <div class="col-8">
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing">Active Account</span>
+              <span class="input-group-text">Active Account</span>
             </div>
             <select id="active_account" class="custom-select"></select>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing">Ticket Price</span>
+              <span class="input-group-text">Ticket Price</span>
             </div>
             <input id="price" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
             <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing">ETH</span>
+              <span class="input-group-text">ETH</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <button type="button" class="btn btn-primary" id="buy_ticket">Buy Ticket</span>
         </div>
       </div>
 
       <div style="height:10px"></div>
 
-      <div class="row">
-        <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <button type="button" class="btn btn-warning" id="refund_ticket">Refund Ticket</span>
         </div>
       </div>
